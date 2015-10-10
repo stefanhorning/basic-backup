@@ -3,7 +3,7 @@ Backup scripts in bash utilizing rsync and hardlinking for efficient incremental
 **remote** backups. It can keep states for each backup run. Currently set to 7 days. But if
 you run it hourly it can easily be extended.
 
-## Project layout
+## Project layout / dependencies
 Basic backup consists of two script. One to be placed on the machine you want to
 backup (production_machine) and the other one to be placed on the machine that
 receives the backup via SSH (backup_machine).
@@ -47,9 +47,10 @@ project also come with a third script called `backup_stats.sh`. This script can 
 stats by analyzing those logs.
 
 ### Installation steps
-1. SSH Login to host to be backed up and do a wget
-2. Create a passwordless ssh key
-3. SSH Login to the host to receive the backups and do a wget
-4. Put the public key on this host too.
-5. Got back to first host with the rsync script and create a cron job that calls it
-6. That's it (unless you messed up some settings/paths)
+1. SSH Login to host to be backed up and do a `wget https://raw.githubusercontent.com/stefanhorning/basic-backup/master/production_machine/rsync_backup.sh`
+2. Also create a rsync_excludes file in the same dir or use the one from here for a start `wget https://raw.githubusercontent.com/stefanhorning/basic-backup/master/production_machine/rsync_excludes`
+3. Create a passwordless ssh key
+4. SSH Login to the host to receive the backups and do a `wget https://raw.githubusercontent.com/stefanhorning/basic-backup/master/storage_machine/rotate.sh`
+5. Put the public SSH key on this host.
+6. Go back to first host with the rsync script and create a cron job that calls it
+7. That's it (unless you messed up some settings/paths)
