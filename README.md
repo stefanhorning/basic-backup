@@ -14,6 +14,7 @@ dependencies.
 ### Files
 #### rync_backup.sh
 > [Code of rync_backup.sh](https://github.com/stefanhorning/basic-backup/blob/master/production_machine/rsync_backup.sh)
+
 Script to run daily by cron (you of course can change the interval, but currently
 just 7 increments are kept by rotate.sh). This script will utilize rsync to get data accross
 in a syncing fahsion to be more efficient (not copying same things twice). It will also trigger
@@ -21,6 +22,7 @@ the rotate script on the remote host before each sync to prepare the file struct
 
 #### rotate.sh
 > [Code of rotate.sh](https://github.com/stefanhorning/basic-backup/blob/master/storage_machine/rotate.sh)
+
 Keeps the (daily) increments by keeping hardlinks to the files that were presen in that run. So
 storage space is used efficiently. Once files fall out of the rota they are automatically 'garbage
 collected' by the file system (unlinked). To be placed on the backup host which has SSH connectivity
@@ -28,6 +30,7 @@ to the initiating host that runs the sync script.
 
 #### backup_stats.sh
 > [Code of backup_stats.sh](https://github.com/stefanhorning/basic-backup/blob/master/storage_machine/backup_stats.sh)
+
 Just a script to create stats from logfiles created by rotate.sh.
 
 ## Setup
