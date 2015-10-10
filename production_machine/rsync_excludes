@@ -1,0 +1,10 @@
+# Filepatterns to be ignored by the rsync-backup:
+# --- Files: ---
+rsync_excludes
+~$*
+Thumbs.db
+# --- Filetypes: ---
+*.tmp
+*.tib
+# --- Folders: ---
+/home/groups/Archive
