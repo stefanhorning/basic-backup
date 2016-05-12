@@ -1,7 +1,6 @@
 # basic-backup
 Backup scripts in bash utilizing rsync and hardlinking for efficient incremental
-**remote** backups. It can keep states for each backup run. Currently set to 7 days. But if
-you run it hourly it can easily be extended.
+**remote** backups. It can keep states for each backup run. Currently set to 7 days. But if want to run it hourly it can easily be extended.
 
 ## Project layout / dependencies
 Basic backup consists of two script. One to be placed on the machine you want to
@@ -68,5 +67,5 @@ Feel free to issue pull requests if you have any improvements to suggest.
 
 # Licencing / Disclaimer
 The project comes with no strings attached, just use the scripts as you please. I will claim
-no copyright on this as it's just a few lines mostly running othe command. The usage of this
+no copyright on this as it's just a few lines mostly running other commands. The usage of this
 scripts come with no warranties either!
